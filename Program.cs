@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace arquivocsv
 {
@@ -6,7 +7,29 @@ namespace arquivocsv
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string nome,email;
+            int idade;
+            
+            Console.Write("Digite o seu nome: ");
+            nome = Console.ReadLine();
+
+            Console.Write("Digite o seu e-mail: ");
+            email = Console.ReadLine();
+
+            Console.Write("Digite a sua idade: ");
+            idade = Int16.Parse(Console.ReadLine());
+
+            StreamWriter arquivo = new StreamWriter("dados.csv",true);
+            arquivo.WriteLine(nome+";"+email+";"+idade+";"+DateTime.Now.ToShortDateString());
+            arquivo.Close();
+        
+
+
+
+
+
+
+
         }
     }
 }
